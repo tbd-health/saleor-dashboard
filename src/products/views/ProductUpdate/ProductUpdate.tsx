@@ -594,6 +594,11 @@ export const ProductUpdate: React.FC<ProductUpdateProps> = ({ id, params }) => {
         onSubmit={handleSubmit}
         onWarehouseConfigure={() => navigate(warehouseAddPath)}
         onVariantsAdd={() => openModal("add-variants")}
+        onVariantShow={variantId =>
+          navigate(productVariantEditUrl(product.id, variantId), {
+            resetScroll: true
+          })
+        }
         onVariantReorder={handleVariantReorder}
         onVariantEndPreorderDialogOpen={() => setIsEndPreorderModalOpened(true)}
         onImageUpload={handleImageUpload}
