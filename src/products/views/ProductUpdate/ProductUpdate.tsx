@@ -542,6 +542,7 @@ export const ProductUpdate: React.FC<ProductUpdateProps> = ({ id, params }) => {
           />
         ))}
       <ProductUpdatePage
+        channels={availableChannels}
         productId={id}
         isSimpleProduct={isSimpleProduct}
         openChannelsModal={handleChannelsModalOpen}
