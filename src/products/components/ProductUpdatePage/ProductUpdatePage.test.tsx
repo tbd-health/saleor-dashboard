@@ -36,6 +36,7 @@ const useNavigator = jest.spyOn(_useNavigator, "default");
 });
 
 const props: ProductUpdatePageProps = {
+  channels: channelsList,
   productId: "123",
   allChannelsCount: 5,
   categories: [product.category],
