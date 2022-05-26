@@ -23,10 +23,10 @@ export interface PageInfoProps {
 const useStyles = makeStyles(
   {
     root: {
-      overflow: "visible"
-    }
+      overflow: "visible",
+    },
   },
-  { name: "PageInfo" }
+  { name: "PageInfo" },
 );
 
 const PageInfo: React.FC<PageInfoProps> = props => {
@@ -39,7 +39,7 @@ const PageInfo: React.FC<PageInfoProps> = props => {
     defaultValue,
     editorRef,
     isReadyForMount,
-    handleChange
+    handleChange,
   } = useRichTextContext();
   const formErrors = getFormErrors(["title", "content"], errors);
 
@@ -57,7 +57,7 @@ const PageInfo: React.FC<PageInfoProps> = props => {
           label={intl.formatMessage({
             id: "gr+oXW",
             defaultMessage: "Title",
-            description: "page title"
+            description: "page title",
           })}
           name={"title" as keyof PageData}
           value={data.title}
@@ -75,7 +75,7 @@ const PageInfo: React.FC<PageInfoProps> = props => {
             label={intl.formatMessage({
               id: "gMwpNC",
               defaultMessage: "Content",
-              description: "page content"
+              description: "page content",
             })}
             name={"content" as keyof PageData}
           />

@@ -3,7 +3,7 @@ import {
   TableBody,
   TableCell,
   TableFooter,
-  TableRow
+  TableRow,
 } from "@material-ui/core";
 import { categoryUrl } from "@saleor/categories/urls";
 import { Button } from "@saleor/components/Button";
@@ -47,7 +47,7 @@ const DiscountCategories: React.FC<DiscountCategoriesProps> = props => {
     toggle,
     toggleAll,
     selected,
-    isChecked
+    isChecked,
   } = props;
   const classes = useStyles(props);
 
@@ -133,7 +133,7 @@ const DiscountCategories: React.FC<DiscountCategoriesProps> = props => {
                   <TableCell className={classes.colProducts}>
                     {maybe<React.ReactNode>(
                       () => category.products.totalCount,
-                      <Skeleton />
+                      <Skeleton />,
                     )}
                   </TableCell>
                   <TableCell className={classes.colActions}>
@@ -159,7 +159,7 @@ const DiscountCategories: React.FC<DiscountCategoriesProps> = props => {
                   <FormattedMessage {...messages.discountCategoriesNotFound} />
                 </TableCell>
               </TableRow>
-            )
+            ),
           )}
         </TableBody>
       </ResponsiveTable>

@@ -19,36 +19,36 @@ const useStyles = makeStyles(
   theme => ({
     [theme.breakpoints.up("lg")]: {
       colName: {
-        width: "auto"
-      }
+        width: "auto",
+      },
     },
     colFill: {
       padding: 0,
-      width: "100%"
+      width: "100%",
     },
     colName: {},
     colNameHeader: {
-      marginLeft: AVATAR_MARGIN
+      marginLeft: AVATAR_MARGIN,
     },
     link: {
-      cursor: "pointer"
+      cursor: "pointer",
     },
     table: {
-      tableLayout: "fixed"
+      tableLayout: "fixed",
     },
     tableContainer: {
-      overflowX: "scroll"
+      overflowX: "scroll",
     },
     textLeft: {
-      textAlign: "left"
+      textAlign: "left",
     },
     textRight: {
-      textAlign: "right"
-    }
+      textAlign: "right",
+    },
   }),
   {
-    name: "CategoryProductList"
-  }
+    name: "CategoryProductList",
+  },
 );
 
 interface CategoryProductListProps extends ListProps, ListActions {
@@ -66,7 +66,7 @@ export const CategoryProductList: React.FC<CategoryProductListProps> = props => 
     toggleAll,
     toolbar,
     onNextPage,
-    onPreviousPage
+    onPreviousPage,
   } = props;
 
   const classes = useStyles(props);
@@ -152,7 +152,7 @@ export const CategoryProductList: React.FC<CategoryProductListProps> = props => 
                   />
                 </TableCell>
               </TableRow>
-            )
+            ),
           )}
         </TableBody>
       </ResponsiveTable>

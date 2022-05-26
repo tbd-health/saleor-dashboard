@@ -6,7 +6,7 @@ import React from "react";
 
 import CategoryUpdatePage, {
   CategoryPageTab,
-  CategoryUpdatePageProps
+  CategoryUpdatePageProps,
 } from "../../../categories/components/CategoryUpdatePage";
 import { category as categoryFixture } from "../../../categories/fixtures";
 import { listActionsProps } from "../../../fixtures";
@@ -30,14 +30,14 @@ const updateProps: Omit<CategoryUpdatePageProps, "classes"> = {
   onSubmit: () => undefined,
   pageInfo: {
     hasNextPage: true,
-    hasPreviousPage: true
+    hasPreviousPage: true,
   },
   productListToolbar: null,
   products: mapEdgesToItems(category.products),
   saveButtonBarState: "default",
   subcategories: mapEdgesToItems(category.children),
   subcategoryListToolbar: null,
-  ...listActionsProps
+  ...listActionsProps,
 };
 
 storiesOf("Views / Categories / Update category", module)
@@ -54,7 +54,7 @@ storiesOf("Views / Categories / Update category", module)
       {...updateProps}
       category={{
         ...category,
-        backgroundImage: null
+        backgroundImage: null,
       }}
     />
   ))
@@ -84,16 +84,16 @@ storiesOf("Views / Categories / Update category", module)
         {
           code: ProductErrorCode.REQUIRED,
           field: "name",
-          message: "Product field name required"
+          message: "Product field name required",
         },
         {
           code: ProductErrorCode.REQUIRED,
           field: "description",
-          message: "Product field description required"
-        }
+          message: "Product field description required",
+        },
       ].map(err => ({
         __typename: "ProductError",
-        ...err
+        ...err,
       }))}
     />
   ));

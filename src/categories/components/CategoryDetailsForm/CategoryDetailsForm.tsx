@@ -24,14 +24,14 @@ export const CategoryDetailsForm: React.FC<CategoryDetailsFormProps> = ({
   disabled,
   data,
   onChange,
-  errors
+  errors,
 }) => {
   const intl = useIntl();
   const {
     defaultValue,
     editorRef,
     isReadyForMount,
-    handleChange
+    handleChange,
   } = useRichTextContext();
 
   const formErrors = getFormErrors(["name", "description"], errors);
@@ -46,7 +46,7 @@ export const CategoryDetailsForm: React.FC<CategoryDetailsFormProps> = ({
           <TextField
             label={intl.formatMessage({
               id: "vEYtiq",
-              defaultMessage: "Category Name"
+              defaultMessage: "Category Name",
             })}
             name="name"
             disabled={disabled}
@@ -68,7 +68,7 @@ export const CategoryDetailsForm: React.FC<CategoryDetailsFormProps> = ({
             helperText={getProductErrorMessage(formErrors.description, intl)}
             label={intl.formatMessage({
               id: "8HRy+U",
-              defaultMessage: "Category Description"
+              defaultMessage: "Category Description",
             })}
             name="description"
           />

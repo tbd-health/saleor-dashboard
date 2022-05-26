@@ -38,7 +38,7 @@ export function useRichText({ initial, triggerChange }: UseRichTextOptions) {
     handleChange,
     getValue,
     defaultValue,
-    isReadyForMount
+    isReadyForMount,
   };
 }
 

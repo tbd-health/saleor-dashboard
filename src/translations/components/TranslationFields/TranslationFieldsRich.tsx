@@ -28,7 +28,7 @@ const TranslationFieldsRich: React.FC<TranslationFieldsRichProps> = ({
   saveButtonState,
   resetKey,
   onDiscard,
-  onSubmit
+  onSubmit,
 }) => {
   const intl = useIntl();
 
@@ -39,10 +39,10 @@ const TranslationFieldsRich: React.FC<TranslationFieldsRichProps> = ({
     editorRef,
     isReadyForMount,
     handleChange,
-    getValue
+    getValue,
   } = useRichText({
     initial,
-    triggerChange: () => setIsDirty(true)
+    triggerChange: () => setIsDirty(true),
   });
 
   useEffect(() => setExitDialogSubmitRef(onSubmit), [onSubmit]);
@@ -61,7 +61,7 @@ const TranslationFieldsRich: React.FC<TranslationFieldsRichProps> = ({
           helperText={undefined}
           label={intl.formatMessage({
             id: "/vCXIP",
-            defaultMessage: "Translation"
+            defaultMessage: "Translation",
           })}
           name="translation"
           data-test-id="translation-field"

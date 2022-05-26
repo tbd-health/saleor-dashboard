@@ -7,7 +7,7 @@ import {
   pageListProps,
   searchPageProps,
   sortPageProps,
-  tabPageProps
+  tabPageProps,
 } from "../../../fixtures";
 import Decorator from "../../../storybook/Decorator";
 import { pageTypes } from "../../fixtures";
@@ -20,10 +20,10 @@ const props: PageTypeListPageProps = {
   ...sortPageProps,
   sort: {
     ...sortPageProps.sort,
-    sort: PageTypeListUrlSortField.name
+    sort: PageTypeListUrlSortField.name,
   },
   ...tabPageProps,
-  pageTypes
+  pageTypes,
 };
 
 storiesOf("Views / Page types / Page types list", module)

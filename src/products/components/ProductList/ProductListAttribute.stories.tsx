@@ -10,7 +10,7 @@ const attributes: ProductListAttributeFragment[] = [
     __typename: "SelectedAttribute",
     attribute: {
       __typename: "Attribute",
-      id: "1"
+      id: "1",
     },
     values: [
       {
@@ -23,14 +23,14 @@ const attributes: ProductListAttributeFragment[] = [
         date: "2022-03-11",
         dateTime: null,
         value: "",
-        __typename: "AttributeValue"
-      }
-    ]
+        __typename: "AttributeValue",
+      },
+    ],
   },
   {
     attribute: {
       id: "2",
-      __typename: "Attribute"
+      __typename: "Attribute",
     },
     values: [
       {
@@ -43,15 +43,15 @@ const attributes: ProductListAttributeFragment[] = [
         date: null,
         dateTime: "2022-03-01T15:24:00+00:00",
         value: "",
-        __typename: "AttributeValue"
-      }
+        __typename: "AttributeValue",
+      },
     ],
-    __typename: "SelectedAttribute"
+    __typename: "SelectedAttribute",
   },
   {
     attribute: {
       id: "3",
-      __typename: "Attribute"
+      __typename: "Attribute",
     },
     values: [
       {
@@ -64,7 +64,7 @@ const attributes: ProductListAttributeFragment[] = [
         date: null,
         dateTime: null,
         value: "",
-        __typename: "AttributeValue"
+        __typename: "AttributeValue",
       },
       {
         id: "QXR0cmlidXRlOjMx",
@@ -76,11 +76,11 @@ const attributes: ProductListAttributeFragment[] = [
         date: null,
         dateTime: null,
         value: "",
-        __typename: "AttributeValue"
-      }
+        __typename: "AttributeValue",
+      },
     ],
-    __typename: "SelectedAttribute"
-  }
+    __typename: "SelectedAttribute",
+  },
 ];
 
 storiesOf("Views / Products / Product list / Attribute display", module)

@@ -24,14 +24,14 @@ const CollectionDetails: React.FC<CollectionDetailsProps> = ({
   disabled,
   data,
   onChange,
-  errors
+  errors,
 }) => {
   const intl = useIntl();
   const {
     defaultValue,
     editorRef,
     isReadyForMount,
-    handleChange
+    handleChange,
   } = useRichTextContext();
   const formErrors = getFormErrors(["name", "description"], errors);
 
@@ -45,7 +45,7 @@ const CollectionDetails: React.FC<CollectionDetailsProps> = ({
           label={intl.formatMessage({
             id: "/WXs6H",
             defaultMessage: "Name",
-            description: "collection name"
+            description: "collection name",
           })}
           name="name"
           disabled={disabled}

@@ -3,7 +3,7 @@ import {
   pageListProps,
   searchPageProps,
   sortPageProps,
-  tabPageProps
+  tabPageProps,
 } from "@saleor/fixtures";
 import Decorator from "@saleor/storybook/Decorator";
 import { storiesOf } from "@storybook/react";
@@ -20,7 +20,7 @@ const props: AppsListPageProps = {
   ...tabPageProps,
   appsInProgressList: {
     __typename: "Query",
-    appsInstallations: appsInProgress
+    appsInstallations: appsInProgress,
   },
   customAppsList,
   disabled: false,
@@ -32,7 +32,7 @@ const props: AppsListPageProps = {
   onCustomAppRemove: () => undefined,
   onInstalledAppRemove: () => undefined,
   onNextPage: () => undefined,
-  onPreviousPage: () => undefined
+  onPreviousPage: () => undefined,
 };
 
 storiesOf("Views / Apps / Apps list", module)

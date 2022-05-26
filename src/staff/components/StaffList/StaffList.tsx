@@ -4,7 +4,7 @@ import {
   TableFooter,
   TableHead,
   TableRow,
-  Typography
+  Typography,
 } from "@material-ui/core";
 import ResponsiveTable from "@saleor/components/ResponsiveTable";
 import Skeleton from "@saleor/components/Skeleton";
@@ -17,11 +17,11 @@ import {
   getUserInitials,
   getUserName,
   maybe,
-  renderCollection
+  renderCollection,
 } from "@saleor/misc";
 import {
   StaffListUrlSortField,
-  staffMemberDetailsUrl
+  staffMemberDetailsUrl,
 } from "@saleor/staff/urls";
 import { ListProps, RelayToFlat, SortPage } from "@saleor/types";
 import { getArrowDirection } from "@saleor/utils/sort";
@@ -40,36 +40,36 @@ const useStyles = makeStyles(
       justifyContent: "center",
       marginRight: theme.spacing(1),
       overflow: "hidden",
-      width: 47
+      width: 47,
     },
     avatarDefault: {
       "& div": {
         color: theme.palette.primary.contrastText,
-        lineHeight: "47px"
+        lineHeight: "47px",
       },
       background: theme.palette.primary.main,
       height: 47,
       textAlign: "center",
-      width: 47
+      width: 47,
     },
     avatarImage: {
       pointerEvents: "none",
-      width: "100%"
+      width: "100%",
     },
     colEmail: {
-      width: 400
+      width: 400,
     },
     statusText: {
-      color: "#9E9D9D"
+      color: "#9E9D9D",
     },
     tableRow: {
-      cursor: "pointer"
+      cursor: "pointer",
     },
     wideColumn: {
-      width: "80%"
-    }
+      width: "80%",
+    },
   }),
-  { name: "StaffList" }
+  { name: "StaffList" },
 );
 
 interface StaffListProps extends ListProps, SortPage<StaffListUrlSortField> {
@@ -88,7 +88,7 @@ const StaffList: React.FC<StaffListProps> = props => {
     onSort,
     pageInfo,
     sort,
-    staffMembers
+    staffMembers,
   } = props;
 
   const classes = useStyles(props);
@@ -153,7 +153,7 @@ const StaffList: React.FC<StaffListProps> = props => {
           staffMember => (
             <TableRowLink
               className={classNames({
-                [classes.tableRow]: !!staffMember
+                [classes.tableRow]: !!staffMember,
               })}
               hover={!!staffMember}
               href={staffMember && staffMemberDetailsUrl(staffMember.id)}
@@ -182,14 +182,14 @@ const StaffList: React.FC<StaffListProps> = props => {
                         ? intl.formatMessage({
                             id: "9Zlogd",
                             defaultMessage: "Active",
-                            description: "staff member status"
+                            description: "staff member status",
                           })
                         : intl.formatMessage({
                             id: "7WzUxn",
                             defaultMessage: "Inactive",
-                            description: "staff member status"
+                            description: "staff member status",
                           }),
-                    <Skeleton />
+                    <Skeleton />,
                   )}
                 </Typography>
               </TableCell>
@@ -207,7 +207,7 @@ const StaffList: React.FC<StaffListProps> = props => {
                 />
               </TableCell>
             </TableRow>
-          )
+          ),
         )}
       </TableBody>
     </ResponsiveTable>

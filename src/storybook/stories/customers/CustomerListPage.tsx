@@ -3,7 +3,7 @@ import { storiesOf } from "@storybook/react";
 import React from "react";
 
 import CustomerListPageComponent, {
-  CustomerListPageProps
+  CustomerListPageProps,
 } from "../../../customers/components/CustomerListPage";
 import { customerList } from "../../../customers/fixtures";
 import {
@@ -12,7 +12,7 @@ import {
   pageListProps,
   searchPageProps,
   sortPageProps,
-  tabPageProps
+  tabPageProps,
 } from "../../../fixtures";
 import Decorator from "../../Decorator";
 import { MockedUserProvider } from "./MockedUserProvider";
@@ -30,21 +30,21 @@ const props: CustomerListPageProps = {
       active: false,
       value: {
         max: undefined,
-        min: undefined
-      }
+        min: undefined,
+      },
     },
     numberOfOrders: {
       active: false,
       value: {
         max: undefined,
-        min: undefined
-      }
-    }
+        min: undefined,
+      },
+    },
   },
   sort: {
     ...sortPageProps.sort,
-    sort: CustomerListUrlSortField.name
-  }
+    sort: CustomerListUrlSortField.name,
+  },
 };
 
 const CustomerListPage = props => (

@@ -3,7 +3,7 @@ import usePaginator from "@saleor/hooks/usePaginator";
 import TranslationsEntitiesList from "@saleor/translations/components/TranslationsEntitiesList";
 import {
   languageEntityUrl,
-  TranslatableEntities
+  TranslatableEntities,
 } from "@saleor/translations/urls";
 import { mapEdgesToItems } from "@saleor/utils/maps";
 import React from "react";
@@ -13,19 +13,19 @@ import { sumCompleted } from "./utils";
 
 const TranslationsVoucherList: React.FC<TranslationsEntityListProps> = ({
   params,
-  variables
+  variables,
 }) => {
   const paginate = usePaginator();
 
   const { data, loading } = useVoucherTranslationsQuery({
     displayLoader: true,
-    variables
+    variables,
   });
 
   const { loadNextPage, loadPreviousPage, pageInfo } = paginate(
     data?.translations?.pageInfo,
     variables,
-    params
+    params,
   );
 
   return (
@@ -36,11 +36,11 @@ const TranslationsVoucherList: React.FC<TranslationsEntityListProps> = ({
           node.__typename === "VoucherTranslatableContent" && {
             completion: {
               current: sumCompleted([node.translation?.name]),
-              max: 1
+              max: 1,
             },
             id: node.voucher?.id,
-            name: node.voucher?.name || "-"
-          }
+            name: node.voucher?.name || "-",
+          },
       )}
       getRowHref={id =>
         languageEntityUrl(variables.language, TranslatableEntities.vouchers, id)

@@ -6,7 +6,7 @@ import React from "react";
 
 import SaleDetailsPage, {
   SaleDetailsPageProps,
-  SaleDetailsPageTab
+  SaleDetailsPageTab,
 } from "../../../discounts/components/SaleDetailsPage";
 import { sale } from "../../../discounts/fixtures";
 import { listActionsProps } from "../../../fixtures";
@@ -39,14 +39,14 @@ const props: SaleDetailsPageProps = {
   openChannelsModal: () => undefined,
   pageInfo: {
     hasNextPage: true,
-    hasPreviousPage: false
+    hasPreviousPage: false,
   },
   productListToolbar: null,
   variantListToolbar: null,
   sale,
   saveButtonBarState: "default",
   selectedChannelId: "123",
-  ...listActionsProps
+  ...listActionsProps,
 };
 
 storiesOf("Views / Discounts / Sale details", module)
@@ -63,7 +63,7 @@ storiesOf("Views / Discounts / Sale details", module)
         channels: [],
         code: DiscountErrorCode.INVALID,
         field,
-        message: "Discount invalid"
+        message: "Discount invalid",
       }))}
     />
   ))

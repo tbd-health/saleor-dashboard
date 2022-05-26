@@ -5,11 +5,11 @@ import { storiesOf } from "@storybook/react";
 import React from "react";
 
 import ShippingMethodProducts, {
-  ShippingMethodProductsProps
+  ShippingMethodProductsProps,
 } from "./ShippingMethodProducts";
 
 const products = mapEdgesToItems(
-  shippingZone.shippingMethods[0].excludedProducts
+  shippingZone.shippingMethods[0].excludedProducts,
 );
 
 const props: ShippingMethodProductsProps = {
@@ -21,13 +21,13 @@ const props: ShippingMethodProductsProps = {
   onProductUnassign: () => undefined,
   pageInfo: {
     hasNextPage: false,
-    hasPreviousPage: false
+    hasPreviousPage: false,
   },
   products,
   selected: products.length,
   toggle: () => undefined,
   toggleAll: () => undefined,
-  toolbar: () => undefined
+  toolbar: () => undefined,
 };
 
 storiesOf("Shipping / ShippingMethodProducts", module)

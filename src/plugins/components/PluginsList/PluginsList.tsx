@@ -18,10 +18,10 @@ import PluginListTableHead from "./PluginListTableHead";
 export const useStyles = makeStyles(
   () => ({
     link: {
-      cursor: "pointer"
-    }
+      cursor: "pointer",
+    },
   }),
-  { name: "PluginsList" }
+  { name: "PluginsList" },
 );
 
 export interface PluginListProps
@@ -42,7 +42,7 @@ const PluginList: React.FC<PluginListProps> = props => {
     sort,
     onSort,
     onUpdateListSettings,
-    onPreviousPage
+    onPreviousPage,
   } = props;
   const classes = useStyles(props);
   const navigate = useNavigator();
@@ -99,11 +99,11 @@ const PluginList: React.FC<PluginListProps> = props => {
               <TableCell colSpan={totalColSpan}>
                 {intl.formatMessage({
                   id: "Co2U4u",
-                  defaultMessage: "No plugins found"
+                  defaultMessage: "No plugins found",
                 })}
               </TableCell>
             </TableRow>
-          )
+          ),
         )}
       </TableBody>
     </ResponsiveTable>

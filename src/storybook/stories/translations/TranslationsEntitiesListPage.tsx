@@ -5,7 +5,7 @@ import React from "react";
 import { pageListProps, searchPageProps } from "../../../fixtures";
 import TranslationsEntitiesList from "../../../translations/components/TranslationsEntitiesList";
 import TranslationsEntitiesListPage, {
-  TranslationsEntitiesListPageProps
+  TranslationsEntitiesListPageProps,
 } from "../../../translations/components/TranslationsEntitiesListPage";
 import Decorator from "../../Decorator";
 
@@ -22,13 +22,13 @@ const props: TranslationsEntitiesListPageProps = {
     onProductsTabClick: () => undefined,
     onSalesTabClick: () => undefined,
     onShippingMethodsTabClick: () => undefined,
-    onVouchersTabClick: () => undefined
+    onVouchersTabClick: () => undefined,
   },
   language: {
     __typename: "LanguageDisplay",
     code: LanguageCodeEnum.EN,
-    language: "English"
-  }
+    language: "English",
+  },
 };
 
 storiesOf("Views / Translations / Entity list", module)
@@ -41,20 +41,20 @@ storiesOf("Views / Translations / Entity list", module)
           {
             completion: { current: 1, max: 3 },
             id: "1",
-            name: "White Hoodie"
+            name: "White Hoodie",
           },
           {
             completion: { current: 2, max: 3 },
             id: "1",
-            name: "Brown Supreme Hoodie"
-          }
+            name: "Brown Supreme Hoodie",
+          },
         ]}
         getRowHref={() => ""}
         onNextPage={() => undefined}
         onPreviousPage={() => undefined}
         pageInfo={{
           hasNextPage: true,
-          hasPreviousPage: false
+          hasPreviousPage: false,
         }}
       />
     </TranslationsEntitiesListPage>

@@ -19,20 +19,20 @@ export interface PaginationState {
 
 export function createPaginationState(
   paginateBy: number,
-  queryString: Pagination
+  queryString: Pagination,
 ): PaginationState {
   return queryString && (queryString.before || queryString.after)
     ? queryString.after
       ? {
           after: queryString.after,
-          first: paginateBy
+          first: paginateBy,
         }
       : {
           before: queryString.before,
-          last: paginateBy
+          last: paginateBy,
         }
     : {
-        first: paginateBy
+        first: paginateBy,
       };
 }
 
@@ -42,7 +42,7 @@ function usePaginator() {
   function paginate(
     pageInfo: PageInfo,
     paginationState: PaginationState,
-    queryString: Pagination
+    queryString: Pagination,
   ) {
     const loadNextPage = () =>
       navigate(
@@ -50,9 +50,9 @@ function usePaginator() {
           stringifyQs({
             ...queryString,
             after: pageInfo.endCursor,
-            before: undefined
+            before: undefined,
           }),
-        { replace: true, resetScroll: true }
+        { replace: true, resetScroll: true },
       );
 
     const loadPreviousPage = () =>
@@ -61,23 +61,23 @@ function usePaginator() {
           stringifyQs({
             ...queryString,
             after: undefined,
-            before: pageInfo.startCursor
+            before: pageInfo.startCursor,
           }),
-        { replace: true, resetScroll: true }
+        { replace: true, resetScroll: true },
       );
 
     const newPageInfo = pageInfo
       ? {
           ...pageInfo,
           hasNextPage: !!paginationState.before || pageInfo.hasNextPage,
-          hasPreviousPage: !!paginationState.after || pageInfo.hasPreviousPage
+          hasPreviousPage: !!paginationState.after || pageInfo.hasPreviousPage,
         }
       : undefined;
 
     return {
       loadNextPage,
       loadPreviousPage,
-      pageInfo: newPageInfo
+      pageInfo: newPageInfo,
     };
   }
   return paginate;

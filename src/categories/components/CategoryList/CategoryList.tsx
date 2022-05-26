@@ -19,29 +19,29 @@ const useStyles = makeStyles(
   theme => ({
     [theme.breakpoints.up("lg")]: {
       colName: {
-        width: "auto"
+        width: "auto",
       },
       colProducts: {
-        width: 160
+        width: 160,
       },
       colSubcategories: {
-        width: 160
-      }
+        width: 160,
+      },
     },
     colName: {
-      paddingLeft: 0
+      paddingLeft: 0,
     },
     colProducts: {
-      textAlign: "center"
+      textAlign: "center",
     },
     colSubcategories: {
-      textAlign: "center"
+      textAlign: "center",
     },
     tableRow: {
-      cursor: "pointer"
-    }
+      cursor: "pointer",
+    },
   }),
-  { name: "CategoryList" }
+  { name: "CategoryList" },
 );
 
 interface CategoryListProps
@@ -68,7 +68,7 @@ const CategoryList: React.FC<CategoryListProps> = props => {
     onNextPage,
     onPreviousPage,
     onUpdateListSettings,
-    onSort
+    onSort,
   } = props;
 
   const classes = useStyles(props);
@@ -212,7 +212,7 @@ const CategoryList: React.FC<CategoryListProps> = props => {
                 )}
               </TableCell>
             </TableRow>
-          )
+          ),
         )}
       </TableBody>
     </ResponsiveTable>

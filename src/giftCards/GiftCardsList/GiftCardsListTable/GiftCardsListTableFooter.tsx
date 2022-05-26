@@ -14,13 +14,13 @@ const GiftCardsListTableFooter: React.FC = () => {
     pageInfo: apiPageInfo,
     paginationState,
     params,
-    numberOfColumns
+    numberOfColumns,
   } = useGiftCardList();
 
   const { loadNextPage, loadPreviousPage, pageInfo } = paginate(
     apiPageInfo,
     paginationState,
-    params
+    params,
   );
 
   return (

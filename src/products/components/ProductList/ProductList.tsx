@@ -3,12 +3,12 @@ import {
   TableCell,
   TableFooter,
   TableRow,
-  Typography
+  Typography,
 } from "@material-ui/core";
 import { ChannelsAvailabilityDropdown } from "@saleor/components/ChannelsAvailabilityDropdown";
 import {
   getChannelAvailabilityColor,
-  getChannelAvailabilityLabel
+  getChannelAvailabilityLabel,
 } from "@saleor/components/ChannelsAvailabilityDropdown/utils";
 import Checkbox from "@saleor/components/Checkbox";
 import Date from "@saleor/components/Date";
@@ -29,7 +29,7 @@ import { makeStyles, Pill } from "@saleor/macaw-ui";
 import { maybe, renderCollection } from "@saleor/misc";
 import {
   getAttributeIdFromColumnValue,
-  isAttributeColumnValue
+  isAttributeColumnValue,
 } from "@saleor/products/components/ProductListPage/utils";
 import { ProductListUrlSortField, productUrl } from "@saleor/products/urls";
 import { canBeSorted } from "@saleor/products/views/ProductList/sort";
@@ -38,10 +38,10 @@ import {
   ListActions,
   ListProps,
   RelayToFlat,
-  SortPage
+  SortPage,
 } from "@saleor/types";
 import TDisplayColumn, {
-  DisplayColumnProps
+  DisplayColumnProps,
 } from "@saleor/utils/columns/DisplayColumn";
 import { getArrowDirection } from "@saleor/utils/sort";
 import classNames from "classnames";
@@ -55,65 +55,65 @@ const useStyles = makeStyles(
   theme => ({
     [theme.breakpoints.up("md")]: {
       colName: {
-        minWidth: 250
+        minWidth: 250,
       },
       colPrice: {
-        width: 300
+        width: 300,
       },
       colPublished: {
-        width: 200
+        width: 200,
       },
       colType: {
-        width: 200
+        width: 200,
       },
       colDate: {
-        width: 200
-      }
+        width: 200,
+      },
     },
     colAttribute: {
       width: 200,
       overflow: "hidden",
       textOverflow: "ellipsis",
-      whiteSpace: "nowrap"
+      whiteSpace: "nowrap",
     },
     colFill: {
       padding: 0,
-      width: "100%"
+      width: "100%",
     },
     colName: {
       "&$colNameFixed": {
-        width: 250
-      }
+        width: 250,
+      },
     },
     colNameFixed: {},
     colNameHeader: {
-      marginLeft: AVATAR_MARGIN
+      marginLeft: AVATAR_MARGIN,
     },
     colNameWrapper: {
-      display: "block"
+      display: "block",
     },
     colPrice: {
-      textAlign: "right"
+      textAlign: "right",
     },
     colPublished: {},
     colType: {},
     link: {
-      cursor: "pointer"
+      cursor: "pointer",
     },
     table: {
-      tableLayout: "fixed"
+      tableLayout: "fixed",
     },
     tableContainer: {
-      overflowX: "scroll"
+      overflowX: "scroll",
     },
     textLeft: {
-      textAlign: "left"
+      textAlign: "left",
     },
     textRight: {
-      textAlign: "right"
-    }
+      textAlign: "right",
+    },
   }),
-  { name: "ProductList" }
+  { name: "ProductList" },
 );
 
 const DisplayColumn = TDisplayColumn as React.FunctionComponent<
@@ -149,13 +149,13 @@ export const ProductList: React.FC<ProductListProps> = props => {
     onUpdateListSettings,
     onSort,
     selectedChannelId,
-    filterDependency
+    filterDependency,
   } = props;
 
   const classes = useStyles(props);
   const intl = useIntl();
   const gridAttributesFromSettings = settings.columns.filter(
-    isAttributeColumnValue
+    isAttributeColumnValue,
   );
   const numberOfColumns =
     (products?.length === 0 ? 1 : 2) + settings.columns.length;
@@ -197,7 +197,7 @@ export const ProductList: React.FC<ProductListProps> = props => {
             data-test-id="col-name-header"
             arrowPosition="right"
             className={classNames(classes.colName, {
-              [classes.colNameFixed]: settings.columns.length > 4
+              [classes.colNameFixed]: settings.columns.length > 4,
             })}
             direction={
               sort.sort === ProductListUrlSortField.name
@@ -244,12 +244,12 @@ export const ProductList: React.FC<ProductListProps> = props => {
               disabled={
                 !canBeSorted(
                   ProductListUrlSortField.status,
-                  !!selectedChannelId
+                  !!selectedChannelId,
                 )
               }
               tooltip={intl.formatMessage(
                 commonTooltipMessages.noFilterSelected,
-                { filterName: filterDependency.label }
+                { filterName: filterDependency.label },
               )}
             >
               <FormattedMessage {...columnsMessages.availability} />
@@ -257,7 +257,7 @@ export const ProductList: React.FC<ProductListProps> = props => {
           </DisplayColumn>
           {gridAttributesFromSettings.map(gridAttributeFromSettings => {
             const attributeId = getAttributeIdFromColumnValue(
-              gridAttributeFromSettings
+              gridAttributeFromSettings,
             );
 
             return (
@@ -277,9 +277,9 @@ export const ProductList: React.FC<ProductListProps> = props => {
                 {maybe<React.ReactNode>(
                   () =>
                     gridAttributes.find(
-                      gridAttribute => attributeId === gridAttribute.id
+                      gridAttribute => attributeId === gridAttribute.id,
                     ).name,
-                  <Skeleton />
+                  <Skeleton />,
                 )}
               </TableCellHeader>
             );
@@ -314,7 +314,7 @@ export const ProductList: React.FC<ProductListProps> = props => {
               }
               tooltip={intl.formatMessage(
                 commonTooltipMessages.noFilterSelected,
-                { filterName: filterDependency.label }
+                { filterName: filterDependency.label },
               )}
             >
               <FormattedMessage {...columnsMessages.price} />
@@ -342,7 +342,7 @@ export const ProductList: React.FC<ProductListProps> = props => {
             product => {
               const isSelected = product ? isChecked(product.id) : false;
               const channel = product?.channelListings.find(
-                listing => listing.channel.id === selectedChannelId
+                listing => listing.channel.id === selectedChannelId,
               );
 
               return (
@@ -416,7 +416,7 @@ export const ProductList: React.FC<ProductListProps> = props => {
                         (channel ? (
                           <Pill
                             label={intl.formatMessage(
-                              getChannelAvailabilityLabel(channel)
+                              getChannelAvailabilityLabel(channel),
                             )}
                             color={getChannelAvailabilityColor(channel)}
                           />
@@ -433,7 +433,7 @@ export const ProductList: React.FC<ProductListProps> = props => {
                       key={gridAttribute}
                       data-test-id="attribute"
                       data-test-attribute={getAttributeIdFromColumnValue(
-                        gridAttribute
+                        gridAttribute,
                       )}
                     >
                       <ProductListAttribute
@@ -484,7 +484,7 @@ export const ProductList: React.FC<ProductListProps> = props => {
                   />
                 </TableCell>
               </TableRow>
-            )
+            ),
           )}
         </TableBody>
       </ResponsiveTable>
